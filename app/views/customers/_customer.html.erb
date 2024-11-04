@@ -1,0 +1,7 @@
+<div class="customer">
+  <%= image_tag customer.image, size: "100x100" if customer.image.attached? %>
+  <h2><%= customer.full_name %></h2>
+  <p>Phone: <%= customer.phone_number %></p>
+  <p>Email: <%= customer.email_address || "N/A" %></p>
+  <p>Notes: <%= customer.notes %></p>
+</div>
