@@ -1,7 +1,22 @@
-<div class="customer">
-  <%= image_tag customer.image, size: "100x100" if customer.image.attached? %>
-  <h2><%= customer.full_name %></h2>
-  <p>Phone: <%= customer.phone_number %></p>
-  <p>Email: <%= customer.email_address || "N/A" %></p>
-  <p>Notes: <%= customer.notes %></p>
+<div class="card mb-4">
+  <div class="card-content">
+    <div class="media">
+      <% if customer.image.attached? %>
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <%= image_tag customer.image, class: "is-rounded" %>
+          </p>
+        </figure>
+      <% end %>
+      <div class="media-content">
+        <p class="title is-4"><%= customer.full_name %></p>
+        <p class="subtitle is-6"><%= customer.email_address || "No Email" %></p>
+      </div>
+    </div>
+
+    <div class="content">
+      <strong>Phone:</strong> <%= customer.phone_number %><br>
+      <strong>Notes:</strong> <%= customer.notes %>
+    </div>
+  </div>
 </div>
